@@ -7,6 +7,7 @@ pip install < requirements.txt
 cd primeros_pasos
 python manage.py runserver
 ```
+Luego se puede ver el resultado en [localhost:8000] (http://localhost:8000 "Primeros pasos")
 ## Requerimientos
 1. Python 3.5.2
 2. Pip
