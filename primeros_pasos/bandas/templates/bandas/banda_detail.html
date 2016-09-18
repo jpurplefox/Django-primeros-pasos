@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>{{banda.nombre}}</h1>
+<p>Fundada el: {{banda.fundacion}}</p>
+<p>Genero: {{banda.genero}}</p>
+<p>Origen: {{banda.origen}}</p>
+<a href="{% url 'banda-update' banda.id %}">Modificar</a>-
+<a href="{% url 'banda-delete' banda.id %}">Eliminar</a>-
+<a href="{% url 'banda-list' %}">Ver Todas</a>
+{% endblock %}

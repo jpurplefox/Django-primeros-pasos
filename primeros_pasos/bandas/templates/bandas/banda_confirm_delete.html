@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+¿Está seguro que desea eliminar la banda {{banda.nombre}}?
+<form action='' method='POST'>
+{% csrf_token %}
+<input type='submit' value='Si'>
+</form>
+<a href="{{banda.get_absolute_url}}">Volver</a>
+{% endblock %}

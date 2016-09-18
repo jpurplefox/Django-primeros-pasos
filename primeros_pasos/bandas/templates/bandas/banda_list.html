@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Bandas</h1>
+<a href="{% url 'banda-create' %}">Agregar banda</a>
+<table>
+    <tr>
+        <td> Nombre </td>
+    </tr>
+    {% for banda in object_list %}
+    <tr>
+        <td> <a href="{{banda.get_absolute_url}}">{{banda.nombre}}</a> </td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

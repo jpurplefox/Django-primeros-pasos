@@ -16,8 +16,14 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from mi_app.views import HomeView
+from bandas import views as bandas_views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', HomeView.as_view()),
+    url(r'^bandas/$', bandas_views.BandaList.as_view(), name='banda-list'),
+    url(r'^bandas/(?P<pk>[0-9]+)/$', bandas_views.BandaDetail.as_view(), name='banda-detail'),
+    url(r'^bandas/crear/$', bandas_views.BandaCreate.as_view(), name='banda-create'),
+    url(r'^bandas/(?P<pk>[0-9]+)/modificar/$', bandas_views.BandaUpdate.as_view(), name='banda-update'),
+    url(r'^bandas/(?P<pk>[0-9]+)/eliminar/$', bandas_views.BandaDelete.as_view(), name='banda-delete'),
 ]
